@@ -1,5 +1,6 @@
 package com.itla.itlacalc;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tvExpression;
 
+    final String EXPRESSION_VALUE = "expression value";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +26,24 @@ public class MainActivity extends AppCompatActivity {
 
         tvExpression = findViewById(R.id.tvExpression);
 
+        if(savedInstanceState != null){
+            String value = savedInstanceState.getString(EXPRESSION_VALUE);
+
+            assert value != null;
+            if(value.contains("Invalid Expression"))
+                tvExpression.setTextColor(getResources().getColor(R.color.colorError));
+
+            tvExpression.setText(value);
+            expressionBuilder.append(value);
+        }
+
         setListeners();
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString(EXPRESSION_VALUE, tvExpression.getText().toString());
+        super.onSaveInstanceState(outState);
     }
 
     private void setListeners() {
