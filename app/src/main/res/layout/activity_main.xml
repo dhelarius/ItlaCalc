@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/card_spacing_height"
+        android:layout_height="@dimen/spacing_150dp"
         app:cardElevation="@dimen/card_elevation_12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,9 +24,10 @@
                 android:id="@+id/tvExpression"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/text_expression_spacing"
-                android:layout_marginBottom="@dimen/text_expression_spacing"
+                android:layout_marginEnd="@dimen/spacing_10dp"
+                android:layout_marginBottom="@dimen/spacing_10dp"
                 android:fontFamily="@font/roboto_bold"
+                android:textAlignment="textEnd"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/text_size_32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -41,7 +42,7 @@
         android:id="@+id/ibNumberSeven"
         style="@style/buttonStyle"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="@dimen/spacing_top_50dp"
+        android:layout_marginTop="@dimen/spacing_50dp"
         app:layout_constraintEnd_toStartOf="@+id/ibNumberEight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,13 +107,13 @@
         style="@style/buttonStyle"
         android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/ibNumberFive"
-        app:layout_constraintEnd_toStartOf="@+id/ibNumberMulti"
+        app:layout_constraintEnd_toStartOf="@+id/ibMulti"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ibNumberFive"
         app:layout_constraintTop_toTopOf="@+id/ibNumberFive" />
 
     <ImageButton
-        android:id="@+id/ibNumberMulti"
+        android:id="@+id/ibMulti"
         style="@style/buttonStyle"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="37dp"
@@ -164,7 +165,7 @@
         app:layout_constraintTop_toTopOf="@+id/ibNumberThree" />
 
     <ImageButton
-        android:id="@+id/ibNumberCero"
+        android:id="@+id/ibNumberZero"
         style="@style/buttonStyle"
         android:layout_marginStart="37dp"
         android:layout_marginTop="30dp"
@@ -177,11 +178,11 @@
         android:id="@+id/ibDot"
         style="@style/buttonStyle"
         android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ibNumberCero"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberZero"
         app:layout_constraintEnd_toStartOf="@+id/ibEqual"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ibNumberCero"
-        app:layout_constraintTop_toTopOf="@+id/ibNumberCero" />
+        app:layout_constraintStart_toEndOf="@+id/ibNumberZero"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberZero" />
 
     <ImageButton
         android:id="@+id/ibEqual"
@@ -212,7 +213,7 @@
         android:background="@drawable/clear_button_ripple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ibNumberCero" />
+        app:layout_constraintTop_toBottomOf="@+id/ibNumberZero" />
 
     <TextView
         android:id="@+id/textView3"
@@ -253,10 +254,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/number_zero"
-        app:layout_constraintBottom_toBottomOf="@+id/ibNumberCero"
-        app:layout_constraintEnd_toEndOf="@+id/ibNumberCero"
-        app:layout_constraintStart_toStartOf="@+id/ibNumberCero"
-        app:layout_constraintTop_toTopOf="@+id/ibNumberCero" />
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberZero"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberZero"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberZero"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberZero" />
 
     <TextView
         android:id="@+id/textView7"
@@ -374,10 +375,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/multi_sign"
-        app:layout_constraintBottom_toBottomOf="@+id/ibNumberMulti"
-        app:layout_constraintEnd_toEndOf="@+id/ibNumberMulti"
-        app:layout_constraintStart_toStartOf="@+id/ibNumberMulti"
-        app:layout_constraintTop_toTopOf="@+id/ibNumberMulti" />
+        app:layout_constraintBottom_toBottomOf="@+id/ibMulti"
+        app:layout_constraintEnd_toEndOf="@+id/ibMulti"
+        app:layout_constraintStart_toStartOf="@+id/ibMulti"
+        app:layout_constraintTop_toTopOf="@+id/ibMulti" />
 
     <TextView
         android:id="@+id/textView16"

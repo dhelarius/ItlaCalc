@@ -14,7 +14,7 @@
     <string name="number_seven">7</string>
     <string name="number_eigth">8</string>
     <string name="div_sign">/</string>
-    <string name="multi_sign">X</string>
+    <string name="multi_sign">x</string>
     <string name="minu_sign">-</string>
     <string name="plus_sign">+</string>
 </resources>
