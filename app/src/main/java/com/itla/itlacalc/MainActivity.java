@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         clickableViews.add(findViewById(R.id.ibMinus));
         clickableViews.add(findViewById(R.id.ibPlus));
         clickableViews.add(findViewById(R.id.ibClear));
+        clickableViews.add(findViewById(R.id.ibBack));
 
         for(View item : clickableViews){
             item.setOnClickListener(this::makeExpression);
@@ -60,22 +61,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         switch (v.getId()){
-            case R.id.ibNumberOne: buildExpr("1"); break;
-            case R.id.ibNumberTwo: buildExpr("2"); break;
-            case R.id.ibNumberThree: buildExpr("3"); break;
-            case R.id.ibNumberFour: buildExpr("4"); break;
-            case R.id.ibNumberFive: buildExpr("5"); break;
-            case R.id.ibNumberSix: buildExpr("6"); break;
-            case R.id.ibNumberSeven: buildExpr("7"); break;
-            case R.id.ibNumberEight: buildExpr("8"); break;
-            case R.id.ibNumberNine: buildExpr("9"); break;
-            case R.id.ibNumberZero: buildExpr("0"); break;
-            case R.id.ibDot: buildExpr("."); break;
-            case R.id.ibDiv: buildExpr("/"); break;
-            case R.id.ibMulti: buildExpr("x"); break;
-            case R.id.ibMinus: buildExpr("-"); break;
-            case R.id.ibPlus: buildExpr("+"); break;
-            case R.id.ibClear: clear(); break;
+            case R.id.ibNumberOne: buildExpr(getString(R.string.number_one)); break;
+            case R.id.ibNumberTwo: buildExpr((getString(R.string.number_two))); break;
+            case R.id.ibNumberThree: buildExpr((getString(R.string.number_three))); break;
+            case R.id.ibNumberFour: buildExpr((getString(R.string.number_four))); break;
+            case R.id.ibNumberFive: buildExpr((getString(R.string.number_five))); break;
+            case R.id.ibNumberSix: buildExpr((getString(R.string.number_six))); break;
+            case R.id.ibNumberSeven: buildExpr((getString(R.string.number_seven))); break;
+            case R.id.ibNumberEight: buildExpr((getString(R.string.number_eigth))); break;
+            case R.id.ibNumberNine: buildExpr((getString(R.string.number_nine))); break;
+            case R.id.ibNumberZero: buildExpr((getString(R.string.number_zero))); break;
+            case R.id.ibDot: buildExpr((getString(R.string.dot_sign))); break;
+            case R.id.ibDiv: buildExpr((getString(R.string.div_sign))); break;
+            case R.id.ibMulti: buildExpr((getString(R.string.multi_sign))); break;
+            case R.id.ibMinus: buildExpr((getString(R.string.minus_sign))); break;
+            case R.id.ibPlus: buildExpr((getString(R.string.plus_sign))); break;
+            case R.id.ibClear: clearAll(); break;
+            case R.id.ibBack: delete(); break;
             default: calculate(expressionBuilder.toString());
         }
 
@@ -111,7 +113,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void clear() {
+    private void delete(){
+        if(expressionBuilder.length() > 0) {
+            expressionBuilder.deleteCharAt(expressionBuilder.length() - 1);
+            tvExpression.setText(expressionBuilder.toString());
+        }
+    }
+
+    private void clearAll() {
         tvExpression.setText("");
         expressionBuilder.setLength(0);
     }
