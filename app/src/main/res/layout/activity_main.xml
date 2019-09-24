@@ -4,15 +4,403 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".MainActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/card_spacing_height"
+        app:cardElevation="@dimen/card_elevation_12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvExpression"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/text_expression_spacing"
+                android:layout_marginBottom="@dimen/text_expression_spacing"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="@dimen/text_size_32sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="6+4/10" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/ibNumberSeven"
+        style="@style/buttonStyle"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="@dimen/spacing_top_50dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberEight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageButton
+        android:id="@+id/ibNumberEight"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberSeven"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberNine"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberSeven"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberSeven"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/ibNumberNine"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberEight"
+        app:layout_constraintEnd_toStartOf="@+id/ibDiv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberEight"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberEight"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/ibDiv"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="37dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberNine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberNine"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberNine"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/ibNumberFour"
+        style="@style/buttonStyle"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberFive"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibNumberSeven" />
+
+    <ImageButton
+        android:id="@+id/ibNumberFive"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberFour"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberSix"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberFour"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberFour" />
+
+    <ImageButton
+        android:id="@+id/ibNumberSix"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberFive"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberMulti"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberFive"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberFive" />
+
+    <ImageButton
+        android:id="@+id/ibNumberMulti"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="37dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberSix"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberSix"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberSix" />
+
+    <ImageButton
+        android:id="@+id/ibNumberOne"
+        style="@style/buttonStyle"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberTwo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibNumberFour" />
+
+    <ImageButton
+        android:id="@+id/ibNumberTwo"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberOne"
+        app:layout_constraintEnd_toStartOf="@+id/ibNumberThree"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberOne"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberOne" />
+
+    <ImageButton
+        android:id="@+id/ibNumberThree"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberTwo"
+        app:layout_constraintEnd_toStartOf="@+id/ibMinus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberTwo"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberTwo" />
+
+    <ImageButton
+        android:id="@+id/ibMinus"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="37dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberThree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberThree"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberThree" />
+
+    <ImageButton
+        android:id="@+id/ibNumberCero"
+        style="@style/buttonStyle"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/ibDot"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibNumberOne" />
+
+    <ImageButton
+        android:id="@+id/ibDot"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberCero"
+        app:layout_constraintEnd_toStartOf="@+id/ibEqual"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibNumberCero"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberCero" />
+
+    <ImageButton
+        android:id="@+id/ibEqual"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibDot"
+        app:layout_constraintEnd_toStartOf="@+id/ibPlus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibDot"
+        app:layout_constraintTop_toTopOf="@+id/ibDot" />
+
+    <ImageButton
+        android:id="@+id/ibPlus"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="37dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ibEqual"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibEqual"
+        app:layout_constraintTop_toTopOf="@+id/ibEqual" />
+
+    <ImageButton
+        android:id="@+id/ibClear"
+        android:layout_width="@dimen/size_150dp"
+        android:layout_height="@dimen/size_48dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/clear_button_ripple"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibNumberCero" />
+
     <TextView
+        android:id="@+id/textView3"
+        style="@style/text_button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/number_seven"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberSeven"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberSeven"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberSeven"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberSeven" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_one"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberOne"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberOne"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberOne"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberOne" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_four"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberFour"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberFour"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberFour"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberFour" />
+
+    <TextView
+        android:id="@+id/textView6"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_zero"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberCero"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberCero"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberCero"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberCero" />
+
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_clear"
+        app:layout_constraintBottom_toBottomOf="@+id/ibClear"
+        app:layout_constraintEnd_toEndOf="@+id/ibClear"
+        app:layout_constraintStart_toStartOf="@+id/ibClear"
+        app:layout_constraintTop_toTopOf="@+id/ibClear" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/ibDot"
+        app:layout_constraintEnd_toEndOf="@+id/ibDot"
+        app:layout_constraintStart_toStartOf="@+id/ibDot"
+        app:layout_constraintTop_toTopOf="@+id/ibDot" />
+
+    <TextView
+        android:id="@+id/textView9"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_two"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberTwo"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberTwo"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberTwo"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberTwo" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/equal_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/ibEqual"
+        app:layout_constraintEnd_toEndOf="@+id/ibEqual"
+        app:layout_constraintStart_toStartOf="@+id/ibEqual"
+        app:layout_constraintTop_toTopOf="@+id/ibEqual" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_three"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberThree"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberThree"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberThree"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberThree" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_five"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberFive"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberFive"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberFive"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberFive" />
+
+    <TextView
+        android:id="@+id/textView11"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_six"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberSix"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberSix"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberSix"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberSix" />
+
+    <TextView
+        android:id="@+id/textView12"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_eigth"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberEight"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberEight"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberEight"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberEight" />
+
+    <TextView
+        android:id="@+id/textView13"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number_nine"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberNine"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberNine"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberNine"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberNine" />
+
+    <TextView
+        android:id="@+id/textView14"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/div_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/ibDiv"
+        app:layout_constraintEnd_toEndOf="@+id/ibDiv"
+        app:layout_constraintStart_toStartOf="@+id/ibDiv"
+        app:layout_constraintTop_toTopOf="@+id/ibDiv" />
+
+    <TextView
+        android:id="@+id/textView15"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/multi_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/ibNumberMulti"
+        app:layout_constraintEnd_toEndOf="@+id/ibNumberMulti"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberMulti"
+        app:layout_constraintTop_toTopOf="@+id/ibNumberMulti" />
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minu_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/ibMinus"
+        app:layout_constraintEnd_toEndOf="@+id/ibMinus"
+        app:layout_constraintStart_toStartOf="@+id/ibMinus"
+        app:layout_constraintTop_toTopOf="@+id/ibMinus" />
+
+    <TextView
+        android:id="@+id/textView17"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus_sign"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPlus"
+        app:layout_constraintEnd_toEndOf="@+id/ibPlus"
+        app:layout_constraintStart_toStartOf="@+id/ibPlus"
+        app:layout_constraintTop_toTopOf="@+id/ibPlus" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
