@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ibPlus: buildExpr((getString(R.string.plus_sign))); break;
             case R.id.ibClear: clearAll(); break;
             case R.id.ibBack: delete(); break;
-            default: calculate(expressionBuilder.toString());
+            default: showResult(expressionBuilder.toString());
         }
 
     }
@@ -108,20 +108,17 @@ public class MainActivity extends AppCompatActivity {
         tvExpression.setText(expressionBuilder.toString());
     }
 
-    private void calculate(String expression) {
+    private void showResult(String expression){
 
         if(expression.isEmpty())
             return;
 
-        if(expression.contains("x"))
-            expression = expression.replace("x", "*");
+        Number result = getResult(expression);
 
-        Operation operation = new Operation(expression);
+        if(result != null){
+            String strResult = StringUtil.evaluateString(result.toString());
 
-        if(operation.getResult() != null) {
-            String result = StringUtil.evaluateString(operation.getResult().toString());
-
-            tvExpression.setText(result);
+            tvExpression.setText(strResult);
 
             expressionBuilder.setLength(0);
             expressionBuilder.append(tvExpression.getText());
@@ -130,6 +127,14 @@ public class MainActivity extends AppCompatActivity {
             tvExpression.setText(exception);
             tvExpression.setTextColor(getResources().getColor(R.color.colorError));
         }
+
+    }
+
+    private Number getResult(String expression) {
+
+        Operation operation = new Operation(expression);
+
+        return operation.getResult();
 
     }
 
