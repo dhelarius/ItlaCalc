@@ -13,6 +13,9 @@ class Operation {
     }
 
     private Number getResult(String expression){
+        if(expression.contains("x"))
+            expression = expression.replace("x", "*");
+
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("rhino");
 
