@@ -11,7 +11,7 @@
         android:id="@+id/ibNumberSeven"
         style="@style/buttonStyle"
         android:layout_marginStart="37dp"
-        android:layout_marginTop="@dimen/spacing_50dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toStartOf="@+id/ibNumberEight"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,23 +178,33 @@
         android:id="@+id/ibClear"
         android:layout_width="@dimen/size_131dp"
         android:layout_height="@dimen/size_48dp"
-        android:layout_marginStart="37dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/clear_button_ripple"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ibDot"
+        app:layout_constraintStart_toStartOf="@+id/ibNumberZero"
         app:layout_constraintTop_toBottomOf="@+id/ibNumberZero" />
+
+    <ImageButton
+        android:id="@+id/ibPercent"
+        style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/ibClear"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.482" />
 
     <ImageButton
         android:id="@+id/ibBack"
         style="@style/buttonStyle"
+        android:layout_marginStart="20dp"
         android:layout_marginEnd="37dp"
         android:src="@drawable/ic_backspace"
-        app:layout_constraintBottom_toBottomOf="@+id/ibClear"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPercent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
-        app:layout_constraintStart_toEndOf="@+id/ibClear"
-        app:layout_constraintTop_toTopOf="@+id/ibClear"
-        app:layout_constraintVertical_bias="0.655" />
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toEndOf="@+id/ibPercent"
+        app:layout_constraintTop_toTopOf="@+id/ibPercent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -413,6 +423,18 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView18"
+        style="@style/text_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/percent_sign"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/ibPercent"
+        app:layout_constraintEnd_toEndOf="@+id/ibPercent"
+        app:layout_constraintStart_toStartOf="@+id/ibPercent"
+        app:layout_constraintTop_toTopOf="@+id/ibPercent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

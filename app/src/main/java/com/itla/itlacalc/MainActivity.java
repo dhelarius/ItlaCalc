@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         clickableViews.add(findViewById(R.id.ibMinus));
         clickableViews.add(findViewById(R.id.ibPlus));
         clickableViews.add(findViewById(R.id.ibClear));
+        clickableViews.add(findViewById(R.id.ibPercent));
         clickableViews.add(findViewById(R.id.ibBack));
 
         for(View item : clickableViews){
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.ibDiv: buildExpr((getString(R.string.div_sign))); break;
             case R.id.ibMulti: buildExpr((getString(R.string.multi_sign))); break;
             case R.id.ibMinus: buildExpr((getString(R.string.minus_sign))); break;
+            case R.id.ibPercent: buildExpr((getString(R.string.percent_sign))); break;
             case R.id.ibPlus: buildExpr((getString(R.string.plus_sign))); break;
             case R.id.ibClear: clearAll(); break;
             case R.id.ibBack: delete(); break;
@@ -104,6 +106,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void buildExpr(String value){
+
+        if(value.equals("%") && (tvExpression.getText().toString().contains("/") ||
+                tvExpression.getText().toString().contains("x") ||
+                tvExpression.getText().toString().contains("+") ||
+                tvExpression.getText().toString().contains("%"))) {
+            return;
+        }
+
+        if(tvExpression.getText().toString().contains("%") && (value.equals("/") ||
+                                   value.equals("x") ||
+                                   value.equals("+"))) {
+            return;
+        }
+
         expressionBuilder.append(value);
         tvExpression.setText(expressionBuilder.toString());
     }

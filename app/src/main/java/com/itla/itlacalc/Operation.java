@@ -16,6 +16,9 @@ class Operation {
         if(expression.contains("x"))
             expression = expression.replace("x", "*");
 
+        if(expression.contains("%"))
+            expression = expression.replace("%", "*") + "/100";
+
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("rhino");
 
